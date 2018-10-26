@@ -9,7 +9,10 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background-color: #fafafa;
+}
+
+.App ul {
+  list-style: none;
 }
 
 .input-section {
@@ -44,16 +47,17 @@
   margin: 10px;
 }
 
-.todo::after {
+.completed {
+  visibility: hidden;
+  margin: 10px;
+}
+
+.completed::before {
   display: block;
   content: "";
   width: 50%;
   margin: 0 auto;
   border-bottom: thin solid #acacac;
-}
-
-.todo ul {
-  list-style: none;
 }
 
 .task {
@@ -70,6 +74,19 @@
   padding-left: 5px;
   border: thin solid #acacac;
   border-right: none;
+}
+
+.task.done {
+  background-color: #377771;
+}
+
+.task.done .task-text{
+  color: #fefefe;
+  border: thin solid #377771;
+}
+
+.task.done .button-check{
+  background-color: #ffaf87;
 }
 
 .task-text span {

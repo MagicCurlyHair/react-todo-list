@@ -20,7 +20,7 @@ class App extends Component {
 
   addTask() {
     if (this.state.textInput){
-      this.setState({todo: [...this.state.todo, {text: this.state.textInput}], textInput: ""});
+      this.setState({todo: [...this.state.todo, {text: this.state.textInput, completed: false}], textInput: ""});
     }
   }
 
@@ -51,8 +51,8 @@ class App extends Component {
     return (
       <div className="App">
         <Input textInput={this.state.textInput} handleInput={this.handleInput} addTask={this.addTask}/>
-        <TodoList todo={this.state.todo} deleteTask={this.deleteTask} completeTask={this.changeTask}/>
-        <CompletedList completed={this.state.completed} deleteTask={this.deleteTask} uncompleteTask={this.changeTask}/>
+        <TodoList todo={this.state.todo} deleteTask={this.deleteTask} changeTask={this.changeTask}/>
+        <CompletedList completed={this.state.completed} deleteTask={this.deleteTask} changeTask={this.changeTask}/>
       </div>
     );
   }
