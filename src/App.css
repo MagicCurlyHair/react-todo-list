@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 15px;
+  border-radius: 2px;
+}
+
+.task-input {
+  flex-grow: 2;
+  height: 2em;
+  padding: 0 0.2em 0;
+  border: thin solid #acacac;
+  border-right: none;
+  border-radius: 2px 0 0 2px;
+  outline: none;
+}
+
+.button-add {
+  width: 100px;
+  padding-top: 2px;
+  color: #fefefe;
+  border: none;
+  background-color: #ff8e72;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo {
+  margin: 10px;
+}
+
+.todo::after {
+  display: block;
+  content: "";
+  width: 50%;
+  margin: 0 auto;
+  border-bottom: thin solid #acacac;
+}
+
+.todo ul {
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  min-height: 2.5em;
+  margin: 10px 5px;
+  text-align: left;
+}
+
+.task-text{
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  border: thin solid #acacac;
+  border-right: none;
+}
+
+.task-text span {
+  line-height: 1.5em;
+}
+
+.button-check {
+  flex-shrink: 0;
+  width: 45px;
+  text-align: center;
+  color: #fefefe;
+  background-color: #377771;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button-delete {
+  flex-shrink: 0;
+  width: 45px;
+  text-align: center;
+  color: #fefefe;
+  background-color: #ed6a5e;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.icon-disabled {
+  pointer-events: none;
+}
