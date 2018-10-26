@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/MagicCurlyHair/react-todo-list/precache-manifest.5d3919c216c0ffd09873f875c3b697b2.js"
+  "/react-todo-list/precache-manifest.2c02410e45bd80e37e11ad19189e375d.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/MagicCurlyHair/react-todo-list/index.html", {
+workbox.routing.registerNavigationRoute("/react-todo-list/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
