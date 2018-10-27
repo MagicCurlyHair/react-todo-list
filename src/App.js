@@ -11,7 +11,7 @@ class App extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.addTask = this.addTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
-    this.changeTask = this.changeTask.bind(this);
+    this.changeTaskState = this.changeTaskState.bind(this);
   }
 
   handleInput(event) {
@@ -20,7 +20,7 @@ class App extends Component {
 
   addTask() {
     if (this.state.textInput){
-      this.setState({todo: [...this.state.todo, {text: this.state.textInput, completed: false}], textInput: ""});
+      this.setState({todo: [...this.state.todo, {text: this.state.textInput, isCompleted: false}], textInput: ""});
     }
   }
 
@@ -33,26 +33,23 @@ class App extends Component {
     return deleted;
   }
 
-  changeTask(event) {
+  changeTaskState(event) {
     const task = this.deleteTask(event)[0];
-    const list = event.target.parentNode.dataset.list;
+    task.isCompleted = !task.isCompleted;
+    const listName = event.target.parentNode.dataset.list;
     let otherList = "";
-    list === "todo" ? otherList = "completed": otherList = "todo";
+    listName === "todo" ? otherList = "completed": otherList = "todo";
     const newList = [...this.state[otherList]];
     newList.push(task);
     this.setState({[otherList]: newList});
-  }
-
-  uncompleteTask(event) {
-
   }
 
   render() {
     return (
       <div className="App">
         <Input textInput={this.state.textInput} handleInput={this.handleInput} addTask={this.addTask}/>
-        <TodoList todo={this.state.todo} deleteTask={this.deleteTask} changeTask={this.changeTask}/>
-        <CompletedList completed={this.state.completed} deleteTask={this.deleteTask} changeTask={this.changeTask}/>
+        <TodoList todo={this.state.todo} deleteTask={this.deleteTask} changeTaskState={this.changeTaskState}/>
+        <CompletedList completed={this.state.completed} deleteTask={this.deleteTask} changeTaskState={this.changeTaskState}/>
       </div>
     );
   }

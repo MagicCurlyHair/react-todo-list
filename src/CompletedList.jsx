@@ -9,14 +9,13 @@ class CompletedList extends Component {
     else document.getElementById("completed").style.visibility = "hidden";
   }
   render(){
-    const {completed, deleteTask, changeTask} = this.props;
+    const {completed, deleteTask, changeTaskState} = this.props;
     return(
       <div className="completed" id="completed">
         <ul>
           {/* uses reduceRight so that latest item in the list is always at the top*/}
           {completed.reduceRight((acc, task, index) => {
-            task.completed = true;
-            acc.push(<li key={index}><Task task={task} id={index} list={"completed"} deleteTask={deleteTask} changeTask={changeTask}/></li>);
+            acc.push(<li key={index}><Task task={task} id={index} list={"completed"} deleteTask={deleteTask} changeTaskState={changeTaskState}/></li>);
             return acc;
           }, [])}
         </ul>
